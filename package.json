@@ -1,0 +1,31 @@
+{
+  "name": "demo-eleventy-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasnainzia20/demo-eleventy-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env ELEVENTY_ENV=development SITE_URL=http://localhost:8080 concurrently \"npx @11ty/eleventy --serve\" \"npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --watch\"",
+    "build": "cross-env ELEVENTY_ENV=production SITE_URL=https://tooleble.com npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site"
+  },
+  "bugs": {
+    "url": "https://github.com/hasnainzia20/demo-eleventy-site/issues"
+  },
+  "homepage": "https://github.com/hasnainzia20/demo-eleventy-site#readme",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0"
+  }
+}
