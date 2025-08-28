@@ -1,4 +1,17 @@
 ---
 layout: base.njk
 title: Home
+subHeading: "All-in-one tools platform"
 ---
+
+<section class="hero-section">
+  <h1>{{ title }}</h1>
+  <p>{{ subHeading }}</p>
+  <a href="{{ site.baseUrl }}tools/text-tools/" class="hero-button">Explore Tools</a>
+</section>
+
+<nav class="categories">
+  <a href="{{ site.baseUrl }}tools/text-tools/">Text Tools</a>
+  <a href="{{ site.baseUrl }}tools/code-tools/">Code Tools</a>
+  <a href="{{ site.baseUrl }}tools/unit-converter-tools/">Unit Converters</a>
+</nav>

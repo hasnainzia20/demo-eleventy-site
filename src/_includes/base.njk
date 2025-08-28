@@ -6,14 +6,14 @@
 
     <title>{{ title or pageTitle }} – Tooleble</title>
     <meta name="description" content="{{ description or subHeading }}" />
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Tooleble" />
     <meta property="og:title" content="{{ title or pageTitle }} – Tooleble" />
     <meta property="og:description" content="{{ description or subHeading }}" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}" />
     {% if ogImage %}
       <meta property="og:image" content="{{ ogImage }}" />
     {% endif %}
@@ -42,21 +42,21 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "{{ site.url }}/"
+            "item": "{{ site.baseUrl }}/"
           }
           {% if categoryTitle %}
           ,{
             "@type": "ListItem",
             "position": 2,
             "name": "{{ categoryTitle }}",
-            "item": "{{ site.url }}{{ categoryUrl }}"
+            "item": "{{ site.baseUrl }}{{ categoryUrl }}"
           }
           {% endif %}
           ,{
             "@type": "ListItem",
             "position": {% if categoryTitle %}3{% else %}2{% endif %},
             "name": "{{ pageTitle }}",
-            "item": "{{ site.url }}{{ page.url }}"
+            "item": "{{ site.baseUrl }}{{ page.url }}"
           }
         ]
       }
@@ -71,7 +71,7 @@
         "applicationCategory": "Utility",
         "operatingSystem": "Any",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "url": "{{ site.url }}{{ page.url }}",
+        "url": "{{ site.baseUrl }}{{ page.url }}",
         "description": "{{ description or subHeading }}"
       }
     </script>
@@ -80,9 +80,9 @@
     {% include "header.njk" %}
 
     <nav class="breadcrumbs text-sm px-4 py-2 bg-gray-100" aria-label="Breadcrumb">
-      <a href="{{ site.url }}/" class="text-blue-600 hover:underline">Home</a>
+      <a href="{{ site.baseUrl }}/" class="text-blue-600 hover:underline">Home</a>
       {% if categoryTitle %}
-        › <a href="{{ site.url }}{{ categoryUrl }}" class="text-blue-600 hover:underline">{{ categoryTitle }}</a>
+        › <a href="{{ site.baseUrl }}{{ categoryUrl }}" class="text-blue-600 hover:underline">{{ categoryTitle }}</a>
       {% endif %}
       › <span>{{ pageTitle }}</span>
     </nav>
