@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "cross-env ELEVENTY_ENV=development SITE_URL=http://localhost:8080 concurrently \"npx @11ty/eleventy --serve\" \"npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --watch\"",
     "build": "cross-env ELEVENTY_ENV=production SITE_URL=https://tooleble.com npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site",
-    "build:ghpages": "cross-env ELEVENTY_ENV=production SITE_URL=https://hasnainzia20.github.io/demo-eleventy-site npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site --pathprefix=/<your-repo-name>/",
+    "build:ghpages": "cross-env ELEVENTY_ENV=production SITE_URL=https://hasnainzia20.github.io/demo-eleventy-site npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site --pathprefix=/demo-eleventy-site/",
     "deploy": "npm run build:ghpages && gh-pages -d _site"
   },
   "bugs": {
@@ -29,6 +29,7 @@
   "devDependencies": {
     "concurrently": "^9.2.1",
     "cross-env": "^10.0.0",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "npm-run-all": "^4.1.5"
   }
 }

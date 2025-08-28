@@ -1,7 +1,7 @@
 {# _includes/header.njk #}
 <header id="navbar" class="bg-[#1e1e2f] text-white flex items-center justify-between px-4 py-2 relative">
   <div class="logo text-xl font-bold">
-    <a href="/" class="text-[#00dfd8] no-underline">Tooleble</a>
+    <a href="{{ site.baseUrl }}" class="text-[#00dfd8] no-underline">Tooleble</a>
   </div>
 
   <div id="hamburger" class="hamburger text-2xl cursor-pointer md:hidden">
@@ -13,7 +13,7 @@
       <li class="relative group">
         <a  class="block px-3 py-2 hover:text-[#00dfd8]">Text Tools</a>
         <div class="dropdown hidden group-hover:flex flex-col absolute bg-[#292944] w-48 top-full left-0 z-50">
-          <a href="/tools/text-tools/text-case-converter/" class="px-4 py-2 hover:bg-[#1e1e2f]">Text Case Converter</a>
+          <a href="{{ site.baseUrl }}/tools/text-tools/text-case-converter/" class="px-4 py-2 hover:bg-[#1e1e2f]">Text Case Converter</a>
           <a href="/tools/text-tools/word-counter/" class="px-4 py-2 hover:bg-[#1e1e2f]">Word Counter</a>
         </div>
 
