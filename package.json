@@ -12,7 +12,8 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env ELEVENTY_ENV=development SITE_URL=http://localhost:8080 concurrently \"npx @11ty/eleventy --serve\" \"npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --watch\"",
-    "build": "cross-env ELEVENTY_ENV=production SITE_URL=https://tooleble.com npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site"
+    "build": "cross-env ELEVENTY_ENV=production SITE_URL=https://tooleble.com npx tailwindcss -i ./styles/input.css -o ./_site/styles/output.css --minify && npx @11ty/eleventy --input=src --output=./_site",
+    "deploy": "gh-pages -d _site"
   },
   "bugs": {
     "url": "https://github.com/hasnainzia20/demo-eleventy-site/issues"
