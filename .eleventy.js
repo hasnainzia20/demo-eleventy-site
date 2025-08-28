@@ -18,6 +18,8 @@ export default function (eleventyConfig) {
   // eleventyConfig.addPassthroughCopy("README.md");
   // eleventyConfig.addPassthroughCopy("robots.txt");
   // eleventyConfig.addPassthroughCopy("sitemap.xml");
+  const pathPrefix = eleventyConfig.globalData.pathPrefix || "/";
+
   eleventyConfig.addFilter("slugify", slugify);
 
   eleventyConfig.addFilter("excerpt", function (content, length = 140) {
@@ -62,6 +64,8 @@ export default function (eleventyConfig) {
       data: "_data",
       output: "_site",
     },
+    pathPrefix: pathPrefix,
+    templateFormats: ["md", "njk", "html", "liquid"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
   };
